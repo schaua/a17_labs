@@ -11,6 +11,9 @@ import { ProjectFormComponent } from "../project-form/project-form.component";
     imports: [ProjectCardComponent, ProjectFormComponent]
 })
 export class ProjectListComponent implements OnInit {
+onCancel() {
+  this.editingProject =  null;
+}
   @Input()
   projects: Project[] = [];
   editingProject : Project | null = null;
