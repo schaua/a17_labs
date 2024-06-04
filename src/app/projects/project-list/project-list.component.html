@@ -1,3 +1,16 @@
-<pre>
-    {{projects | json }}
-</pre>
+@for (project of projects; track project.id){
+    <div class="row">
+        <div class="cols-sm">
+            <div class="card">
+                <img [src]="project.imageUrl" [alt]="project.name">
+                <section class="section dark">
+                    <h5 class="strong">
+                        <strong>{{project.name}}</strong>
+                    </h5>
+                    <p>{{project.description}}</p>
+                    <p>Budget: {{project.budget}}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+}
