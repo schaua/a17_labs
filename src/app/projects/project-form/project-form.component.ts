@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-project-form',
@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './project-form.component.html',
   styleUrl: './project-form.component.css'
 })
-export class ProjectFormComponent {
-
+export class ProjectFormComponent implements OnInit {
+  constructor() {}
+  ngOnInit(): void {
+  }
+  onCancelClick(event: Event) {
+    event.preventDefault();
+  }
+    
 }
