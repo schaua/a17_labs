@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Project } from '../shared/project.model';
 import { JsonPipe } from '@angular/common';
 
@@ -17,12 +17,15 @@ export class ProjectFormComponent implements OnInit {
   cancel = new EventEmitter<void>();
   @Output()
   save = new EventEmitter<any>();
-  
+
   projectForm: FormGroup = new FormGroup({});
   constructor() {}
   ngOnInit(): void {
     this.projectForm = new FormGroup({
-      name: new FormControl(this.project.name),
+      name: new FormControl(this.project.name,[
+        Validators.required,
+        Validators.minLength(3)
+      ]),
       description: new FormControl(this.project.description),
       budget: new FormControl(this.project.budget),
       isActive: new FormControl(this.project.isActive)
