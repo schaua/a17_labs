@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Project } from '../shared/project.model';
 import { JsonPipe } from '@angular/common';
+import { ValidationErrorsComponent } from '../../shared/validation-errors/validation-errors.component';
 
 @Component({
   selector: 'app-project-form',
   standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe],
+  imports: [ReactiveFormsModule, JsonPipe, ValidationErrorsComponent],
   templateUrl: './project-form.component.html',
   styleUrl: './project-form.component.css'
 })

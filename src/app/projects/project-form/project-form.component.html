@@ -1,20 +1,8 @@
 <form [formGroup]="projectForm" class="input-group vertical" 
 (submit)="onSubmit()">
-    <label 
-    [class.invalid]="projectForm.get('name')?.invalid" for="name">Project Name</label>
+    <label for="name">Project Name</label>
     <input type="text" name="name" placeholder="enter name" formControlName="name">
-    @if(projectForm.get('name')?.hasError('required'))
-    {
-        <div class="card error">
-            <p>Name is required.</p>
-        </div>
-    }
-    @if(projectForm.get('name')?.hasError('minlength'))
-    {
-        <div class="card error">
-            <p>Name must be at least 3 characters long.</p>
-        </div>
-    }
+    <app-validation-errors [control]="projectForm.get('name')"></app-validation-errors>
 
     <label for="description">Project Description</label>
     <textarea type="text" name="description" placeholder="enter description"

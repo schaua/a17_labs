@@ -1,0 +1,9 @@
+@if(shouldShowErrors()){
+  <div>
+@for(message of getErrorMessages(); track message){
+  <div class="card error">
+    <p>{{message}}</p>
+  </div>
+}
+  </div>  
+}
