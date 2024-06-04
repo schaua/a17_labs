@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Project } from '../shared/project.model';
-import { JsonPipe } from '@angular/common';
+import { CurrencyPipe, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, CurrencyPipe],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.css'
 })
