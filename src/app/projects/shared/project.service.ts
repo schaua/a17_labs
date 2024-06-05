@@ -35,4 +35,13 @@ export class ProjectService {
       })
     );
   }
+
+  find(id: number): Observable<Project> {
+    const url = this.projectsUrl + id;
+    return this.http.get<Project>(url).pipe(
+      catchError((error: HttpErrorResponse ) => {
+        console.error(error);
+        return throwError(() => new Error("An error occured loading the project"));})
+    );
+  }
 }
