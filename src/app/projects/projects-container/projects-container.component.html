@@ -1,3 +1,15 @@
 <h1>Projects</h1>
-<app-project-list [projects]="projects"
-(saveListItem)="onSaveListItem($event)"></app-project-list>
+<div class="row">
+    @if(errorMessage){
+        <div>
+            <section>
+                <p>
+                    <span class="icon-alert inverse"></span>
+                    {{errorMessage}}
+                </p>
+            </section>
+        </div>
+    }
+    <app-project-list [projects]="projects"
+    (saveListItem)="onSaveListItem($event)"></app-project-list>
+</div>
