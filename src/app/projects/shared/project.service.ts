@@ -1,6 +1,6 @@
 import { environment } from '../../../environments/environments';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of, throwError } from 'rxjs';
+import { Observable, catchError, delay, of, throwError } from 'rxjs';
 import { Project } from './project.model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
@@ -16,6 +16,7 @@ export class ProjectService {
   constructor(private http: HttpClient) { }
   list(): Observable<Project[]>{
     return this.http.get<Project[]>(this.projectsUrl).pipe(
+      // delay(2000),
       catchError( 
         (error: HttpErrorResponse) => {
           console.log(error);

@@ -1,4 +1,10 @@
 <h1>Projects</h1>
+@if(loading) {
+    <div class="center-page">
+        <span class="spinner primary"></span>
+        <p>Loading...</p>
+    </div>
+}
 <div class="row">
     @if(errorMessage){
         <div>
