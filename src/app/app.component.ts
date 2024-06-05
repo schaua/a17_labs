@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { ProjectsContainerComponent } from "./projects/projects-container/projects-container.component";
 
 @Component({
@@ -7,7 +7,7 @@ import { ProjectsContainerComponent } from "./projects/projects-container/projec
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, ProjectsContainerComponent]
+    imports: [RouterOutlet, RouterLink, RouterLinkActive, ProjectsContainerComponent]
 })
 export class AppComponent {
   title = 'awesome';
