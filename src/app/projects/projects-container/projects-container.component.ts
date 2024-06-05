@@ -22,7 +22,7 @@ export class ProjectsContainerComponent implements OnInit {
       }
     )
   }
-  onSaveListItem(event: any){
+  onSaveListItem(event:any){
     const project: Project = event.item;
     const index  = this.projects.findIndex(element => element.id === project.id);
     this.projects[index] = project;
